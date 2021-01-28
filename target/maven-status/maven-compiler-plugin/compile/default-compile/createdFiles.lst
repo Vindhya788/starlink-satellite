@@ -1,8 +1,0 @@
-com\satelliteconstellation\satelliteS\repository\SatelliteRepository.class
-com\satelliteconstellation\satelliteS\controller\SatelliteController.class
-com\satelliteconstellation\satelliteS\entity\Satellite.class
-com\satelliteconstellation\satelliteS\service\SatelliteService.class
-com\satelliteconstellation\satelliteS\VO\ResponseTemplate.class
-com\satelliteconstellation\satelliteS\exceptions\InvalidSatelliteReferenceException.class
-com\satelliteconstellation\satelliteS\VO\Location.class
-com\satelliteconstellation\satelliteS\SatelliteSApplication.class
