@@ -8,6 +8,6 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:8
-COPY --from=build /usr/src/app/target/*.jar /usr/local/lib/satellite-mysql.jar
+COPY --from=build /usr/src/app/target/satellite-mysql.jar /usr/local/lib/satellite-mysql.jar
 EXPOSE 8089
 ENTRYPOINT ["java","-jar","/usr/local/lib/satellite-mysql.jar"]
