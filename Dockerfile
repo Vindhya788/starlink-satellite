@@ -1,5 +1,13 @@
+# Build stage
+#
+FROM maven:3.5-jdk-8 AS build
+COPY src /usr/src/app/src
+COPY pom.xml /usr/src/app
+RUN mvn -f /usr/src/app/pom.xml clean package
+
+# Package stage
+#
 FROM openjdk:8
-VOLUME /tmp
+COPY --from=build /usr/src/app/target/*.jar /usr/local/lib/satellite-mysql.jar
 EXPOSE 8089
-ADD target/satellite-mysql.jar satellite-mysql.jar
-ENTRYPOINT ["java", "-jar", "satellite-mysql.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/satellite-mysql.jar"]
